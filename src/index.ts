@@ -9,7 +9,7 @@ async function run(): Promise<void> {
   try {
     const name = core.getInput("name");
     const workflow_id = core.getInput("workflow_id");
-    const url = core.getInput("url"); // "https://files.p4b.biz/v3/upload/artifacts"
+    const url = core.getInput("url");
     const src = core.getInput("path");
     const cwd = fs.statSync(src).isDirectory() ? src : path.dirname(src);
     const files = src === cwd ? ["."] : [path.basename(src)];

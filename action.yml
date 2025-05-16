@@ -11,7 +11,7 @@ inputs:
     required: true
   workflow_id:
     description: "GitHub run/workflow ID for parallel builds with the same artifacts name"
-    required: false
+    required: true
 runs:
   using: "node16"
   main: "dist/index.js"
