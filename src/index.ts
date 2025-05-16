@@ -1,7 +1,7 @@
 import * as core from "@actions/core";
 import fs from "node:fs";
 import path from "node:path";
-import tar from "tar";
+import * as tar from "tar";
 import axios, { isAxiosError } from "axios";
 import FormData from "form-data";
 
