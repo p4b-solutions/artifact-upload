@@ -29455,7 +29455,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(7484));
 const node_fs_1 = __importDefault(__nccwpck_require__(3024));
 const node_path_1 = __importDefault(__nccwpck_require__(6760));
-const tar_1 = __importDefault(__nccwpck_require__(8116));
+const tar = __importStar(__nccwpck_require__(8116));
 const axios_1 = __importStar(__nccwpck_require__(7269));
 const form_data_1 = __importDefault(__nccwpck_require__(6454));
 async function run() {
@@ -29466,7 +29466,7 @@ async function run() {
         const src = core.getInput("path");
         const cwd = node_fs_1.default.statSync(src).isDirectory() ? src : node_path_1.default.dirname(src);
         const files = src === cwd ? ["."] : [node_path_1.default.basename(src)];
-        await tar_1.default.create({ gzip: true, file: `${name}.tgz`, cwd }, files);
+        await tar.create({ gzip: true, file: `${name}.tgz`, cwd }, files);
         const form = new form_data_1.default();
         form.append("file", node_fs_1.default.createReadStream(`${name}.tgz`));
         try {
